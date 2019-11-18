@@ -1,0 +1,2 @@
+class TablescapesController < ApplicationController
+end
