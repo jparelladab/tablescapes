@@ -1,0 +1,24 @@
+
+<div class="image-show">
+  <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt="">
+</div>
+
+<div class="container">
+  <div class="tablescape-description">
+    <h2>Tablescape Description</h2>
+    <ul>
+      <li>NAME: <%=  @tablescape.name%></li>
+      <li>Description: <%= @tablescape.description %></li>
+      <li>USER ID: <%= @tablescape.user_id %></li>
+      <li>TAG: <%= @tablescape.tag %></li>
+      <li>Location: <%= @tablescape.location %></li>
+    </ul>
+  </div>
+
+  <div class="reserve-form">
+    <%= simple_form_for [@tablescape] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "add a review", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

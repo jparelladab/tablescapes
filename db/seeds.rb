@@ -8,7 +8,22 @@
 User.destroy_all
 
 
-User.create email: "test@test.com", password: "123456"
+user = User.create email: "test@test.com", password: "123456"
+
+puts user
 
 puts "EMAIL: test@test.com"
 puts "PASS: 123456"
+
+Tablescape.destroy_all
+
+Tablescape.create(name: "white christmas", price_per_person: 40, user: user, description: "Very nice tablescape", tag: "christmas", location: "london")
+
+
+
+# t.string "name"
+#     t.integer "price_per_person"
+#     t.text "description"
+#     t.bigint "user_id"
+#     t.string "tag"
+#     t.string "location"

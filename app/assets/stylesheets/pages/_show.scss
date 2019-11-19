@@ -1,0 +1,28 @@
+body {
+}
+
+.image-show {
+  margin: auto;
+  text-align: center;
+  margin: 20px;
+}
+
+.main-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+}
+
+.tablescape-description {
+  border: 1px solid black;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.reserve-form {
+  border: 1px solid black;
+}
