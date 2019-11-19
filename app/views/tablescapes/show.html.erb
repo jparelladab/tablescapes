@@ -1,6 +1,17 @@
 <div class="container">
-  <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt="">
-
+  <div class="product">
+    <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt="">
+    <div class="tablescape-description">
+      <h2><%=  @tablescape.name%></h2>
+      <h3><%= @tablescape.tag %></h3>
+      <p><%= @tablescape.description %></p>
+      <h4>Items:</h4>
+      <% @items.each do |item| %>
+        <span><%= item.name %></span>
+      <% end %>
+      <div class="price">£<%= @tablescape.price_per_person %></div>
+    </div>
+  </div>
   <div class="reserve-form">
     <%= simple_form_for [@booking] do |f| %>
       <%= f.input :date_from%>
@@ -15,18 +26,7 @@
 </div>
 
 
-<div class="container">
-  <div class="tablescape-description">
-    <h2>Tablescape Description</h2>
-    <ul>
-      <li>NAME: <%=  @tablescape.name%></li>
-      <li>Description: <%= @tablescape.description %></li>
-      <li>USER ID: <%= @tablescape.user_id %></li>
-      <li>TAG: <%= @tablescape.tag %></li>
-      <li>Location: <%= @tablescape.location %></li>
-      <li>Price_per_person: <%= @tablescape.price_per_person %></li>
-    </ul>
-  </div>
+
 
 
 

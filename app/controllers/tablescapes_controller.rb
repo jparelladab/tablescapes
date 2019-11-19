@@ -7,6 +7,7 @@ class TablescapesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @items = Item.where(tablescape: params[:id])
   end
 
   def search_results
