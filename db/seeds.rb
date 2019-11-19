@@ -1,29 +1,36 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
+user1 = User.create email: "test@test.com", password: "123456"
 
+puts "email: 'test@test.com', password: '123456'"
 
-user = User.create email: "test@test.com", password: "123456"
+users = []
+100.times {
+  user = User.create email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name
+  users << user
+}
 
-puts user
+tablescapes = []
+50.times {
+  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Quote.matz, user: users[rand(0..(users.count - 1))], tag: Faker::Cosmere.shard, location: Faker::Address.city)
+  tablescapes << tablescape
+}
 
-puts "EMAIL: test@test.com"
-puts "PASS: 123456"
+200.times {
+  Booking.create user: users[rand(0..(users.count - 1))], tablescape: tablescapes[rand(0..(tablescapes.count - 1))], date_from: Faker::Date.backward(days: 180), date_to: Faker::Date.forward(days: 180), total_price: rand(125..500), attendees: rand(5..20)
+}
 
-Tablescape.destroy_all
+800.times {
+  Item.create name: Faker::Appliance.brand, description: Faker::Quote.matz, category: Faker::Appliance.equipment, tablescape: tablescapes[rand(0..(tablescapes.count - 1))]
+}
 
-Tablescape.create(name: "white christmas", price_per_person: 40, user: user, description: "Very nice tablescape", tag: "christmas", location: "london")
+puts "USERS CREATED:"
+pp User.all
 
+puts "TABLESCAPES CREATED:"
+pp Tablescape.all
 
+puts "BOOKINGS CREATED"
+pp Booking.all
 
-# t.string "name"
-#     t.integer "price_per_person"
-#     t.text "description"
-#     t.bigint "user_id"
-#     t.string "tag"
-#     t.string "location"
+puts "ITEMS CREATED:"
+pp Item.all
+
