@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.container-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.outer-container-cards {
+  text-align: center;
+  padding-bottom: 40px;
+  font-size: 14px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-color: rgba(173,167,178,0.8);
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
+}
