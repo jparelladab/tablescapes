@@ -1,7 +1,19 @@
-
-<div class="image-show">
+<div class="container">
   <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt="">
+
+  <div class="reserve-form">
+    <%= simple_form_for [@booking] do |f| %>
+      <%= f.input :date_from%>
+      <%= f.input :date_to%>
+      <%= f.input :attendees %>
+      <%= f.submit "Reserve", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+
+
 </div>
+
 
 <div class="container">
   <div class="tablescape-description">
@@ -12,13 +24,19 @@
       <li>USER ID: <%= @tablescape.user_id %></li>
       <li>TAG: <%= @tablescape.tag %></li>
       <li>Location: <%= @tablescape.location %></li>
+      <li>Price_per_person: <%= @tablescape.price_per_person %></li>
     </ul>
   </div>
 
-  <div class="reserve-form">
-    <%= simple_form_for [@tablescape] do |f| %>
-      <%= f.input :content %>
-      <%= f.submit "add a review", class: "btn btn-primary" %>
-  <% end %>
-  </div>
-</div>
+
+
+
+
+<!-- t.bigint "user_id"
+t.bigint "tablescape_id"
+t.date "date_from"
+t.date "date_to"
+t.integer "total_price"
+t.integer "attendees"
+ -->
+

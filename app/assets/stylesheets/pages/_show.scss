@@ -1,28 +1,30 @@
 body {
 }
 
-.image-show {
-  margin: auto;
-  text-align: center;
-  margin: 20px;
-}
 
 .main-image {
-  width: 100%;
+  width: 60%;
   height: 400px;
   object-fit: cover;
+  margin: 20px;
 
 }
 
 .tablescape-description {
   border: 1px solid black;
   margin: 20px;
+  width: 60%;
 }
 
 .container {
   display: flex;
 }
 
-.reserve-form {
+form {
   border: 1px solid black;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
 }
