@@ -1,0 +1,12 @@
+<h1>All Tablescapes</h1>
+
+<% @tablescapes.each do |tablescape| %>
+<div class="card">
+  <p><%= tablescape.name %> - price: <%= tablescape.price_per_person %></p>
+  <p><%= tablescape.description %></p>
+  <p><%= tablescape.tag %></p>
+  <p><%= tablescape.location %></p>
+</div>
+<% end %>
+
+<%= link_to "Back to Home Page", root_path %>

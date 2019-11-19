@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Tablescapes</h1>
+
+
+<h3>Search for a Tablescape by category:</h3>
+<%= form_tag(search_results_path, method: :get) do %>
+  Category: <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Select by category" %>
+  <br>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+
+<%= link_to "Search All", tablescapes_path %>
