@@ -1,32 +1,36 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
+user1 = User.create email: "test@test.com", password: "123456"
 
+puts "email: 'test@test.com', password: '123456'"
 
-user_one = User.new email: "test@test.com", password: "123456"
-user_one.save
-user_two = User.new email: "test@test.com", password: "654321"
-user_two.save
+users = []
+100.times {
+  user = User.create email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name
+  users << user
+}
 
-puts "EMAIL: test@test.com"
-puts "PASS: 123456"
+tablescapes = []
+50.times {
+  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Quote.matz, user: users[rand(0..(users.count - 1))], tag: Faker::Cosmere.shard, location: Faker::Address.city)
+  tablescapes << tablescape
+}
 
-puts "Destroying the tablescapes"
-Tablescape.destroy_all
+200.times {
+  Booking.create user: users[rand(0..(users.count - 1))], tablescape: tablescapes[rand(0..(tablescapes.count - 1))], date_from: Faker::Date.backward(days: 180), date_to: Faker::Date.forward(days: 180), total_price: rand(125..500), attendees: rand(5..20)
+}
 
-puts "Creating seed tablescapes"
+800.times {
+  Item.create name: Faker::Appliance.brand, description: Faker::Quote.matz, category: Faker::Appliance.equipment, tablescape: tablescapes[rand(0..(tablescapes.count - 1))]
+}
 
-10.times do
-  Tablescape.create(name: "Test Tablescape", price_per_person: "150", description: "A test description of Test Tablescape", user: user_one, tag: "Test", location: "London")
-end
-10.times do
-  Tablescape.create(name: "Test Tablescape Two", price_per_person: "200", description: "A test description of Test Tablescape Two", user: user_two, tag: "Test Two", location: "London")
-end
+puts "USERS CREATED:"
+pp User.all
 
-puts "Tablescapes created"
-p Tablescape.all
+puts "TABLESCAPES CREATED:"
+pp Tablescape.all
+
+puts "BOOKINGS CREATED"
+pp Booking.all
+
+puts "ITEMS CREATED:"
+pp Item.all
+
