@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   # resources :owned_tablescapes
-  resources :rented_tablescapes, only: [:index, :show] do
+  resources :tablescapes, only: [:index, :show] do
     resources :bookings, only: :create
   end
   resources :bookings, only: [:index, :show]
