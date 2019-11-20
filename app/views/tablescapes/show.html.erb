@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="reserve-form">
-    <%= simple_form_for [@booking] do |f| %>
+    <%= simple_form_for [@tablescape, @booking] do |f| %>
       <%= f.input :date_from%>
       <%= f.input :date_to%>
       <%= f.input :attendees %>
