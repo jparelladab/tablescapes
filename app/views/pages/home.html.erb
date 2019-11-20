@@ -3,7 +3,7 @@
   <!-- <div class="container"> -->
 
     <br>
-    <div class="form col-6 offset-1">
+    <div id="form-home" class="col-6 offset-1">
     <h4>Search by category:</h4>
     <%= form_tag(search_results_path, method: :get) do %>
     <%= text_field_tag :query,
