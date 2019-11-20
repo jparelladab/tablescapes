@@ -1,0 +1,29 @@
+.form {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  background-color: rgba(173,167,178,0.8);
+  margin-left: 10px;
+  h4 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 9px;
+  }
+}
+
+.form-buttons {
+  box-shadow: 5px 5px 10px (0,0,0,0.5);
+  text-align: center;
+  width: 60%;
+  h3 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 9px;
+  }
+}
