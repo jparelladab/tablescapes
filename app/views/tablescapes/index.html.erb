@@ -1,7 +1,4 @@
-<h1>All Tablescapes</h1>
-
-
-
+<h1 class="index-heading">All Tablescapes</h1>
 
 <div container>
     <div row>
@@ -19,7 +16,9 @@
                  </div>
               </div>
               <p class="card-text"><%= tablescape.description %></p>
-              <p class="card-text"><%= tablescape.location %></p>
+              <!-- <div class="card-location">
+                <p ><%= tablescape.location %></p>
+              </div> -->
               <%= link_to "See details", tablescape_path(tablescape), class: "btn btn-success btn-details"%>
               </div>
             </div>

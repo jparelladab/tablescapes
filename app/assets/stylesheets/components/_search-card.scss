@@ -1,9 +1,7 @@
-h1 {
+.searchpage-heading {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 30px 0;
 }
-
-
 
 .searchcards {
   display: grid;
@@ -22,6 +20,7 @@ h1 {
   box-shadow: 2px 2px 10px #6c757d;
   width: 280px;
   height: 350px;
+  position: relative;
   }
 
   .searchcard-img-top {
@@ -32,25 +31,31 @@ h1 {
 
   .flex {
   display: flex;
-  margin-top: 20px;
+  margin-top: 0px;
+  align-items: flex-end;
+  justify-content: space-between;
   }
 
   .searchcard-title {
     margin-left: 20px;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
+    margin-bottom: 15px;
 
   }
 
   .search-price_tag {
-    margin-left: 80px;
-    font-size: 12px;
+    margin-top:25px;
+    font-size: 14px;
     text-align: right;
+    vertical-align: middle;
+    margin-right: 20px;
   }
 
   .searchcard-text {
     margin-left: 20px;
-    font-size: 10px;
+    margin-right: 20px;
+    font-size: 14px;
     font-family: sans-serif;
     text-align: left;
     font-weight: lighter;
@@ -61,19 +66,24 @@ h1 {
   .btn-details {
     // margin-right: 100px;
     // margin-bottom: 10px;
-    font-size: 12px;
+    // font-size: 14px;
     width: 100px;
     // padding: 10px;
     float: center;
+    position: absolute;
+    bottom: 16px;
+    left: 90px;
 
   }
 
 
 .btn-homelink {
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   margin-left: 20px;
-  font-size: 12px;
-
+  font-size: 14px;
+  position: absolute;
+  left: 30px;
 }
 
 // Smallest device
