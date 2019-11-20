@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   # resources :owned_tablescapes
   get '/search_results', to: 'tablescapes#search_results'
-  resources :tablescapes, only: [:index, :show] do
-    resources :bookings, only: :create
+  resources :tablescapes, only: [:index, :show]
+  #   resources :bookings, only: [:create]
+  # end
+  resources :tablescapes, only: [:show] do
+    resources :bookings, only: [:show, :create]
   end
-  resources :bookings, only: [:index, :show]
 
   # resources :owned_tablescapes, only: [:new, :create, :show, :edit, :update, :destroy] do
   #   resources :items, except: [:show]
