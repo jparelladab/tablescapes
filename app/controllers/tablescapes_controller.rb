@@ -12,6 +12,11 @@ class TablescapesController < ApplicationController
 
   def search_results
     @tablescapes = Tablescape.where(tag: params[:query])
+    if @tablescapes.count == 0
+      @tablescapes = Tablescape.all
+    else
+      @tablescapes = Tablescape.where(tag: params[:query])
+    end
   end
 #   def new
 #     @tablescape = Tablescape.new
