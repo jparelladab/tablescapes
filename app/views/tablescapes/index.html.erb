@@ -1,12 +1,32 @@
 <h1>All Tablescapes</h1>
 
-<% @tablescapes.each do |tablescape| %>
-<div class="card">
-  <p><%= tablescape.name %> - price: <%= tablescape.price_per_person %></p>
-  <p><%= tablescape.description %></p>
-  <p><%= tablescape.tag %></p>
-  <p><%= tablescape.location %></p>
-</div>
-<% end %>
 
-<%= link_to "Back to Home Page", root_path %>
+
+
+<div container>
+    <div row>
+      <div col-12 col-md-6>
+        <div class="cards">
+          <% @tablescapes.each do |tablescape| %>
+           <% tablescape.tag %>
+            <div class="card">
+              <img class="card-img-top" src="https://www.ballarddesigns.com/howtodecorate/wp-content/uploads/2017/11/blue_christmas_table_3.jpg" alt="dinner set">
+              <div class="card-body">
+              <div class="flex">
+               <h5 class="card-title"><%= tablescape.name %></h5>
+              <div class="price_tag">
+                  <p>£<%= tablescape.price_per_person %> pp</p>
+                 </div>
+              </div>
+              <p class="card-text"><%= tablescape.description %></p>
+              <p class="card-text"><%= tablescape.location %></p>
+              <%= link_to "See details", root_path, class: "btn btn-success btn-details"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%= link_to "Back to Home Page", root_path, class: "btn btn-success btn-homelink" %>

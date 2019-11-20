@@ -3,7 +3,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.cards {
+.searchcards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
@@ -11,7 +11,7 @@ h1 {
 }
 
 
-.card {
+.searchcard {
   text-align: center;
   // margin-left: 20px;
   margin-bottom: 10px;
@@ -22,7 +22,7 @@ h1 {
   height: 400px;
   }
 
-  .card-img-top {
+  .searchcard-img-top {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -32,7 +32,7 @@ h1 {
   display: flex;
   }
 
-  .card-title {
+  .searchcard-title {
     text-align: left;
     font-size: 16px;
   }
@@ -42,20 +42,20 @@ h1 {
     font-size: 12px;
   }
 
-  .card-text {
+  .searchcard-text {
     font-size: 10px;
     font-family: sans-serif;
     text-align: left;
     font-weight: lighter;
   }
 
-  // .btn-details {
-  //   // margin-right: 100px;
-  //   // margin-bottom: 10px;
-  //   font-size: 12px;
-  //   width: 100px;
-  //   // padding: 10px;
-  // }
+  .btn-details {
+    // margin-right: 100px;
+    // margin-bottom: 10px;
+    font-size: 12px;
+    width: 100px;
+    // padding: 10px;
+  }
 
 
 .btn-homelink {
