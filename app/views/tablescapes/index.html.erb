@@ -10,7 +10,7 @@
           <% @tablescapes.each do |tablescape| %>
            <% tablescape.tag %>
             <div class="card">
-              <img class="card-img-top" src="https://www.ballarddesigns.com/howtodecorate/wp-content/uploads/2017/11/blue_christmas_table_3.jpg" alt="dinner set">
+              <img class="card-img-top" src="<%= tablescape.image %>" alt="dinner set">
               <div class="card-body">
               <div class="flex">
                <h5 class="card-title"><%= tablescape.name %></h5>
