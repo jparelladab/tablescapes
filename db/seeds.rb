@@ -10,7 +10,7 @@ users = []
 
 tablescapes = []
 50.times {
-  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Quote.matz, user: users[rand(0..(users.count - 1))], tag: Faker::Cosmere.shard, location: Faker::Address.city)
+  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Lorem.paragraph(sentence_count: 3), user: users[rand(0..(users.count - 1))], tag: Faker::Cosmere.shard, location: Faker::Address.city)
   tablescapes << tablescape
 }
 
@@ -19,7 +19,7 @@ tablescapes = []
 }
 
 800.times {
-  Item.create name: Faker::Appliance.brand, description: Faker::Quote.matz, category: Faker::Appliance.equipment, tablescape: tablescapes[rand(0..(tablescapes.count - 1))]
+  Item.create name: Faker::Appliance.brand, description: Faker::Lorem.paragraph(sentence_count: 3), category: Faker::Appliance.equipment, tablescape: tablescapes[rand(0..(tablescapes.count - 1))]
 }
 
 puts "USERS CREATED:"
