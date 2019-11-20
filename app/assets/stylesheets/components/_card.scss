@@ -3,15 +3,23 @@ h1 {
   margin-bottom: 10px;
 }
 
+.cards {
+  display: flex;
+  justify-content: center;
+
+}
+
 
 .card {
   text-align: center;
-  margin-left: 15px;
+  margin-left: 20px;
   margin-bottom: 20px;
   display: inline-block;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #91C3C3;
-  width: 280px;
+  width: 250px;
+
+
 
   .card-img-top {
     width: 100%;
@@ -34,21 +42,28 @@ h1 {
   }
 
   .card-text {
-    font-size: 12px;
+    font-size: 10px;
     font-family: sans-serif;
     text-align: left;
     font-weight: lighter;
   }
 
-  .btn {
-    margin-right: 120px;
+  .btn-details {
+    margin-right: 140px;
     // margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 12px;
     width: 100px;
+    padding: 5px;
   }
 
 }
 
+.btn-homelink {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 12px;
+
+}
 
 
 
