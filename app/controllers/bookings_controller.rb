@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
 before_action :set_booking, only: [:show]
 
   def show
+    @tablescape = Tablescape.find(params[:tablescape_id])
+    @items = Item.where(tablescape: params[:tablescape_id])
   end
 
   def create
