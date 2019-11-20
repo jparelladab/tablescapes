@@ -1,1 +1,29 @@
-show.html.erb
+<div class="container-booking">
+<div class="product-booking">
+  <div class="confirmation-box">
+    <h2>Booking Details: </h2>
+    <p>Dates: from <%= @booking.date_from %> to <%= @booking.date_to %></p>
+    <p>Tablescape name: <%= @tablescape.name %> </p>
+    <p>Description: <%= @tablescape.description %> </p>
+    <p>Attendees: <%= @booking.attendees %> <i class="fas fa-user"></i></p>
+    <p>Total Price: £<%= @booking.total_price %></p>
+  </div>
+  <div class="confirmation-icon">
+    <i class="far fa-check-circle"></i>
+  </div>
+
+</div>
+  <%= image_tag @tablescape.image, class: "main-image" %>
+  <!-- <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt=""> -->
+  <div class="tablescape-description">
+    <h2><%=  @tablescape.name%></h2>
+    <h3><%= @tablescape.tag %></h3>
+    <p><%= @tablescape.description %></p>
+    <h4>Items:</h4>
+    <% @items.each do |item| %>
+      <span><%= item.name %></span>
+    <% end %>
+    <div class="price">£<%= @tablescape.price_per_person %></div>
+    </div>
+  </div>
+</div>
