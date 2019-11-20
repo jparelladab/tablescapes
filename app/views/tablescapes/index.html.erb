@@ -20,7 +20,7 @@
               </div>
               <p class="card-text"><%= tablescape.description %></p>
               <p class="card-text"><%= tablescape.location %></p>
-              <%= link_to "See details", root_path, class: "btn btn-success btn-details"%>
+              <%= link_to "See details", tablescape_path(tablescape), class: "btn btn-success btn-details"%>
               </div>
             </div>
           <% end %>

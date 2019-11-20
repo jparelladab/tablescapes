@@ -3,11 +3,13 @@ h1 {
   margin-bottom: 10px;
 }
 
+
+
 .searchcards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-
+  grid-gap: 15px;
+  margin-left: 50px;
 }
 
 
@@ -17,9 +19,9 @@ h1 {
   margin-bottom: 10px;
   // display: inline-block;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px #91C3C3;
-  width: 250px;
-  height: 400px;
+  box-shadow: 2px 2px 10px #6c757d;
+  width: 280px;
+  height: 350px;
   }
 
   .searchcard-img-top {
@@ -30,23 +32,30 @@ h1 {
 
   .flex {
   display: flex;
+  margin-top: 20px;
   }
 
   .searchcard-title {
+    margin-left: 20px;
     text-align: left;
     font-size: 16px;
+
   }
 
-  .price_tag {
-    margin-left: 50px;
+  .search-price_tag {
+    margin-left: 80px;
     font-size: 12px;
+    text-align: right;
   }
 
   .searchcard-text {
+    margin-left: 20px;
     font-size: 10px;
     font-family: sans-serif;
     text-align: left;
     font-weight: lighter;
+    min-height: 5%;
+    max-height: 5%;
   }
 
   .btn-details {
@@ -55,6 +64,8 @@ h1 {
     font-size: 12px;
     width: 100px;
     // padding: 10px;
+    float: center;
+
   }
 
 
@@ -89,13 +100,13 @@ h1 {
 // Large devices (desktops, 992px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

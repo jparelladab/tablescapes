@@ -3,20 +3,22 @@
   <div container>
     <div row>
       <div col-12 col-md-6>
-        <div class="cards">
+        <div class="searchcards">
           <% @tablescapes.each do |t| %>
            <% t.tag %>
-            <div class="card">
-              <img class="card-img-top" src="https://www.ballarddesigns.com/howtodecorate/wp-content/uploads/2017/11/blue_christmas_table_3.jpg" alt="dinner set">
-              <div class="card-body">
+            <div class="searchcard">
+              <img class="searchcard-img-top" src="<%= t.image %>" alt="dinner set">
+              <div class="searchcard-body">
               <div class="flex">
-               <h5 class="card-title"><%= t.name %></h5>
-                 <div class="price_tag">
+               <h5 class="searchcard-title"><%= t.name %></h5>
+                 <div class="search-price_tag">
                   <p>£<%= t.price_per_person %> pp</p>
                  </div>
               </div>
-              <p class="card-text"><%= t.description %></p>
-              <%= link_to "See details", root_path, class: "btn btn-success btn-details"%>
+              <div class="searchcard-text">
+                <p><%= t.description %></p>
+              </div>
+              <%= link_to "See details", tablescape_path(t), class: "btn btn-success btn-details"%>
               </div>
             </div>
           <% end %>
@@ -30,21 +32,8 @@
       <%= link_to "Back to Home Page", root_path, class: "btn btn-success btn-homelink" %>
 
 
-      <!-- <div class="card">
-        <img class="card-img-top" src="https://i.pinimg.com/originals/a2/e4/92/a2e4928dc31cfe10f2833fde65ff5ff3.jpg" alt="dinner set">
-        <div class="card-body">
-          <div class="flex">
-            <h5 class="card-title">Oh, so Natural</h5>
-            <div class="price_tag">
-            <p>£20pp</p>
-            </div>
-          </div>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#show" class="btn btn-success">See details</a>
-        </div>
-      </div>
-
-        <img class="card-img-top" src="https://designthusiasm.com/wp-content/uploads/2016/11/Elegant-Christmas-Table-Setting-12.jpg" alt="dinner set">
+   <!--      <img class="card-img-top" src="https://designthusiasm.com/wp-content/uploads/2016/11/Elegant-Christmas-Table-Setting-12.jpg" alt="dinner set">
         <img class="card-img-top" src="https://i.pinimg.com/originals/6e/80/f3/6e80f3f594d14970d1db0213cfbaab0b.jpg" alt="dinner set">
         <img class="card-img-top" src="https://christmas.365greetings.com/wp-content/uploads/2015/10/christmas-table-settings.jpg" alt="dinner set">
         <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/1449/4112/files/halloween_table_setting_0050ffa1-e2b8-4a0d-b627-d8809f62aee5_1024x1024.jpg?v=1539739956" alt="dinner set">
+ -->
