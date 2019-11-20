@@ -22,3 +22,13 @@ module Tablescapes
     # the framework and any gems in your application.
   end
 end
+
+Unsplash.configure do |config|
+  config.application_access_key = "c7ceeb17b69ff3b2aa57fec38d90d359861707ded3e402430bd5b8466ed9c297"
+  config.application_secret = "e876f0d7c99500cca61f40349862ffcbddcaf61f294cfd5caafc337a86be3d33"
+  config.application_redirect_uri = "https://tablescapes-319.herokuapp.com/"
+  config.utm_source = "tablescapes"
+
+  # optional:
+  # config.logger = MyCustomLogger.new
+end
