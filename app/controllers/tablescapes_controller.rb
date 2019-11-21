@@ -45,9 +45,9 @@ class TablescapesController < ApplicationController
 
   private
 
-#   def tablescape_params
-#     params.require(:tablescape).permit(:name, :price_per_person, :description, :user_id, :tag, :location)
-#   end
+  def tablescape_params
+    params.require(:tablescape).permit(:name, :price_per_person, :description, :tag, :location)
+  end
 
   def set_tablescape
     @tablescape = Tablescape.find(params[:id])

@@ -6,12 +6,16 @@
         <div class="cards">
           <% @tablescapes.each do |tablescape| %>
             <div class="card">
-              <img class="card-img-top" src="<%= tablescape.image %>" alt="dinner set">
+              <% if tablescape.photos.attached? %>
+                <%= cl_image_tag photo.key, class: "card-img-top" %>
+                <% else %>
+                  <img class="card-img-top" src="<%= tablescape.image %>" alt="dinner set">
+                <% end %>
               <div class="card-body">
               <div class="flex">
-               <h5 class="card-title"><%= tablescape.name %></h5>
+              <h5 class="card-title"><%= tablescape.name %></h5>
               <div class="price_tag">
-                  <p>£<%= tablescape.price_per_person %> pp</p>
+                <p>£<%= tablescape.price_per_person %> pp</p>
                  </div>
               </div>
               <p class="card-text"><%= tablescape.description %></p>
