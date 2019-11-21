@@ -1,7 +1,7 @@
 <div class="container">
   <div class="product">
-    <% if @tablescape.photos.attached? %>
-      <%= cl_image_tag photo.key, class: "card-img-top" %>
+    <% if @tablescape.photo.attached? %>
+      <%= cl_image_tag @tablescape.photo.key, class: "card-img-top" %>
     <% else %>
       <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt="">
     <% end %>
@@ -15,6 +15,7 @@
       <% end %>
       <div class="price">£<%= @tablescape.price_per_person %></div>
     </div>
+    <%= link_to "Update your tablescape?", edit_tablescape_path  %>
   </div>
   <div class="reserve-form">
     <%= simple_form_for [@tablescape, @booking] do |f| %>
@@ -24,7 +25,8 @@
       <%= f.submit "Reserve", class: "btn btn-primary" %>
     <% end %>
   </div>
-
 </div>
+
+<%= link_to 'Delete', tablescape_path, data: {confirm: "Are you sure?"}, method: :delete %>
 
 
