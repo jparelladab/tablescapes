@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= stylesheet_pack_tag 'map' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
@@ -17,8 +18,9 @@
       <div class="login">
         <i class="fas fa-user"></i>
         <% if user_signed_in? %>
-          <span> Hello, <%= current_user.email %> </span>
+          <span> Hello <%= current_user.first_name %> </span>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+          <%= link_to "See your bookings", bookings_path %>
         <% else %>
           <%= link_to "Sign In", new_user_session_path %>
         <% end %>
@@ -28,5 +30,6 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'map' %>
   </body>
 </html>

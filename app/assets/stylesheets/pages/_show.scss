@@ -17,7 +17,7 @@ body {
 
 .tablescape-description {
   border: 1px solid black;
-  margin: 20px;
+  margin-bottom: 20px;
   width: 100%;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -75,9 +75,12 @@ margin: 20px 40px;
 
 }
 
-.confirmation-box {
-
-
+.tablescape-reviews {
+  border: 1px solid black;
+  // margin: 20px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 .confirmation-icon {

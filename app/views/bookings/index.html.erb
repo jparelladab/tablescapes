@@ -1,0 +1,37 @@
+<div id="bookings-index-container">
+  <div id="header">
+    <h1>Your bookings:</h1>
+  </div>
+  <% if @bookings.any? %>
+    <% @bookings.each do |booking| %>
+      <div class="card-bookings-index">
+        <div class="card-bookings-index-details">
+          <p><%= booking.tablescape.name %></p>
+          <p>(<%= booking.date_from %> - <%= booking.date_to %>)</p>
+          <p>£<%= booking.total_price %></p>
+          <p><%= booking.attendees %> <i class="fas fa-user"></i></p>
+        </div>
+        <div class="card-bookings-index-buttons">
+          <% if booking.reviews.any? %>
+          <p><%= booking.reviews.description %></p>
+          <p><%= booking.reviews.rating %></p>
+          <% else %>
+          <p>You haven't left a review for this booking yet</p>
+          <%= link_to "Write Review" %>
+          <% end %>
+        </div>
+        <div class="card-bookings-index-img">
+          <% if booking.tablescape.photos.attached? %>
+            <%= cl_image_tag photo.key, class: "card-img" %>
+          <% else %>
+            <img class="card-img" src="<%= booking.tablescape.image %>" alt="dinner set">
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <h2>Rent your first tablescape today!</h2>
+  <% end %>
+</div>
+
+
