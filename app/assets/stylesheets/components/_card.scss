@@ -1,8 +1,20 @@
 .index-heading {
   text-align: center;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
+.btn-add-index {
+  font-size: 80px;
+  position: absolute;
+  left: 42%;
+  top: 30%;
+  color: gray;
+}
+
+.btn-add-index:hover {
+  color: #238787;
+  text-decoration: none;
+}
 
 
 .cards {
@@ -21,12 +33,30 @@
   border-radius: 5px;
   box-shadow: 2px 2px 10px #6c757d;
   width: 280px;
-  height: 350px;
+  height: 420px;
   position: relative;
   }
 
   .card-body {
     padding: 0;
+  }
+
+  .add_placeholder {
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #6c757d;
+    width: 280px;
+    height: 420px;
+    position: relative;
+    background-color: #DFDFDF;
+  }
+
+  .add_new_text {
+    font-size: 20px;
+    position: absolute;
+    left: 18%;
+    top: 55%;
+    color: gray;
   }
 
   .card-img-top {
@@ -58,6 +88,11 @@
     margin-right: 20px;
   }
 
+  .category_tag {
+    text-align: left;
+    margin-left: 20px;
+  }
+
   .card-text {
     margin-left: 20px;
     margin-right: 20px;
@@ -82,7 +117,6 @@
     left: 90px;
 
   }
-
 
 .btn-homelink {
   margin-top: 30px;

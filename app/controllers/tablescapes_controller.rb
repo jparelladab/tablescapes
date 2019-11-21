@@ -1,8 +1,9 @@
 class TablescapesController < ApplicationController
-  before_action :set_tablescape, only: [:show]
+  before_action :set_tablescape, only: [:show, :edit, :update, :destroy]
 
   def index
     @tablescapes = Tablescape.geocoded
+    @tablescapes = Tablescape.where.not(latitude: nil, longitude: nil)
 
     @markers = @tablescapes.map do |tablescape|
       {
@@ -20,11 +21,10 @@ class TablescapesController < ApplicationController
   end
 
   def search_results
-    @tablescapes = Tablescape.where(tag: params[:query])
-    if @tablescapes.count == 0
-      @tablescapes = Tablescape.all
+    if params[:query].present?
+      @tablescapes = Tablescape.search_by_tag(params[:query])
     else
-      @tablescapes = Tablescape.where(tag: params[:query])
+      @tablescapes = Tablescape.geocoded
     end
   end
 
@@ -34,6 +34,7 @@ class TablescapesController < ApplicationController
 
   def create
     @tablescape = Tablescape.new(tablescape_params)
+    @tablescape.user_id = current_user.id
     if @tablescape.save
       redirect_to tablescape_path(@tablescape)
     else
@@ -41,23 +42,23 @@ class TablescapesController < ApplicationController
     end
   end
 
-#   def edit
-#   end
+  def edit
+  end
 
-#   def update
-#     @tablescape.update(tablescape_params)
-#     redirect_to tablescape_path(@tablescape)
-#   end
+  def update
+    @tablescape.update(tablescape_params)
+    redirect_to tablescape_path(@tablescape)
+  end
 
-#   def destroy
-#     @tablescape.destroy
-#     redirect_to tablescapes_path
-#   end
+  def destroy
+    @tablescape.destroy
+    redirect_to tablescapes_path
+  end
 
   private
 
   def tablescape_params
-    params.require(:tablescape).permit(:name, :price_per_person, :description, :tag, :location, photo: [])
+    params.require(:tablescape).permit(:name, :price_per_person, :description, :tag, :location, :photo)
   end
 
   def set_tablescape

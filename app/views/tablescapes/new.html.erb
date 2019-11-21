@@ -1,17 +1,15 @@
-<h1> new tablescape here</h1>
 
+<h1 class="new_header">Add new tablescape</h1>
+<div class="new_form"> <%= simple_form_for [@tablescape] do |f| %>
+  <%= f.input :name, :as => :string, placeholder: 'name of tablescape', input_html: { :style=> 'width: 400px;' }%>
+  <%= f.input :tag, :as => :string, placeholder: 'category', input_html: { :style=> 'width: 400px;' }%>
+  <%= f.input :description, :as => :text, placeholder: 'short description of your tablescape', input_html: { :style=> 'width: 400px;' } %>
+  <%= f.input :price_per_person, :as => :integer, placeholder: 'number only', input_html: { :style=> 'width: 100px;' } %>
+  <%= f.input :location, :as => :string, placeholder: 'city name', input_html: { :style=> 'width: 400px;' } %>
+  <%= f.input :items, as: :boolean, checked_value: true, unchecked_value: false %>
 
-<%= simple_form_for [@tablescape] do |f| %>
-  <%= f.input :name, :as => :string, input_html: { :style=> 'width: 400px;' }%>
-  <%= f.input :tag, :as => :string, input_html: { :style=> 'width: 400px;' }%>
-  <%= f.input :description, :as => :text, input_html: { :style=> 'width: 400px;' } %>
-  <%= f.input :price_per_person, :as => :integer, input_html: { :style=> 'width: 400px;' } %>
-  <%= f.input :location, :as => :string, input_html: { :style=> 'width: 400px;' } %>
   <%= f.input :photo, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add my Tablescape", class: "btn btn-success" %>
-<% end %>
-
-<br>
-
-<%= link_to "Back to Homepage", tablescapes_path, class: "btn btn-success"%>
+  <% end %>
+</div>
 
