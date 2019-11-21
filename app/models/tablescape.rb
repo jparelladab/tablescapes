@@ -7,4 +7,6 @@ class Tablescape < ApplicationRecord
   validates :tag, presence: true
   validates :location, presence: true
   validates :image, presence: true
+  geocoded_by :location
+  after_validation :geocode
 end

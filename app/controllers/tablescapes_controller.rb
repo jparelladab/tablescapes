@@ -2,7 +2,14 @@ class TablescapesController < ApplicationController
   before_action :set_tablescape, only: [:show]
 
   def index
-    @tablescapes = Tablescape.all
+    @tablescapes = Tablescape.geocoded
+
+    @markers = @tablescapes.map do |tablescape|
+      {
+        lat: tablescape.latitude,
+        lng: tablescape.longitude
+      }
+    end
   end
 
   def show
