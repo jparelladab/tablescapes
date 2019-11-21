@@ -1,8 +1,9 @@
 class TablescapesController < ApplicationController
-  before_action :set_tablescape, only: [:show]
+  before_action :set_tablescape, only: [:show, :edit, :update, :destroy]
 
   def index
     @tablescapes = Tablescape.geocoded
+    @tablescapes = Tablescape.where.not(latitude: nil, longitude: nil)
 
     @markers = @tablescapes.map do |tablescape|
       {
@@ -15,14 +16,15 @@ class TablescapesController < ApplicationController
   def show
     @booking = Booking.new
     @items = Item.where(tablescape: params[:id])
+    @tablescape = Tablescape.find(params[:id])
+    @reviews = @tablescape.reviews
   end
 
   def search_results
-    @tablescapes = Tablescape.where(tag: params[:query])
-    if @tablescapes.count == 0
-      @tablescapes = Tablescape.all
+    if params[:query].present?
+      @tablescapes = Tablescape.search_by_tag(params[:query])
     else
-      @tablescapes = Tablescape.where(tag: params[:query])
+      @tablescapes = Tablescape.geocoded
     end
   end
 
@@ -40,18 +42,18 @@ class TablescapesController < ApplicationController
     end
   end
 
-#   def edit
-#   end
+  def edit
+  end
 
-#   def update
-#     @tablescape.update(tablescape_params)
-#     redirect_to tablescape_path(@tablescape)
-#   end
+  def update
+    @tablescape.update(tablescape_params)
+    redirect_to tablescape_path(@tablescape)
+  end
 
-#   def destroy
-#     @tablescape.destroy
-#     redirect_to tablescapes_path
-#   end
+  def destroy
+    @tablescape.destroy
+    redirect_to tablescapes_path
+  end
 
   private
 

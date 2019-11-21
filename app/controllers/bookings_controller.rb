@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
 before_action :set_booking, only: [:show]
 
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
+
   def show
     @tablescape = Tablescape.find(params[:tablescape_id])
     @items = Item.where(tablescape: params[:tablescape_id])
@@ -25,5 +29,4 @@ before_action :set_booking, only: [:show]
   def booking_params
     params.require(:booking).permit(:date_from, :date_to, :total_price, :attendees)
   end
-
 end

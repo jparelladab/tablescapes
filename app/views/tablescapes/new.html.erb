@@ -1,7 +1,7 @@
-<h1> new tablescape here</h1>
 
+<h1 class="new_header">Add new tablescape</h1>
 
-<%= simple_form_for [@tablescape] do |f| %>
+<div class="new_form"> <%= simple_form_for [@tablescape] do |f| %>
   <%= f.input :name, :as => :string, input_html: { :style=> 'width: 400px;' }%>
   <%= f.input :tag, :as => :string, input_html: { :style=> 'width: 400px;' }%>
   <%= f.input :description, :as => :text, input_html: { :style=> 'width: 400px;' } %>
@@ -9,9 +9,6 @@
   <%= f.input :location, :as => :string, input_html: { :style=> 'width: 400px;' } %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add my Tablescape", class: "btn btn-success" %>
-<% end %>
-
-<br>
-
-<%= link_to "Back to Homepage", tablescapes_path, class: "btn btn-success"%>
+  <% end %>
+</div>
 

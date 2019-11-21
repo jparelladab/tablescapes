@@ -1,0 +1,15 @@
+.card-bookings-index {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 80%;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
