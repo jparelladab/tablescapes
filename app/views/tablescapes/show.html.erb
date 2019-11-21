@@ -37,7 +37,11 @@
       <h2>Reviews</h2>
       <% if @reviews.any? %>
         <% @reviews.each do |review| %>
+        <p>-------------</p>
+        <p><strong><em>Reviewed on: </em></strong><%= review.created_at %><p>
         <p><%= review.description %><p>
+        <p><strong><em>Rating: </em></strong><%= review.rating %> out of 5<p>
+        <p>-------------</p>
         <% end %>
       <% else %>
         <p>Be the first to write a review. Write a review of this set after your occasion!</p>
