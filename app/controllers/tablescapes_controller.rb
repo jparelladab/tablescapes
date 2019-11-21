@@ -25,9 +25,10 @@ class TablescapesController < ApplicationController
       @tablescapes = Tablescape.where(tag: params[:query])
     end
   end
-#   def new
-#     @tablescape = Tablescape.new
-#   end
+
+  def new
+    @tablescape = Tablescape.new(params[:id])
+  end
 
 #   def create
 #     @tablescape = Tablescape.new(tablescape_params)

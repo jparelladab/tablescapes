@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   # resources :owned_tablescapes
   get '/search_results', to: 'tablescapes#search_results'
-  resources :tablescapes, only: [:index, :show]
+  resources :tablescapes, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   #   resources :bookings, only: [:create]
   # end
   resources :tablescapes, only: [:show] do
