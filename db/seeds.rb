@@ -11,14 +11,24 @@ users = []
 photo = Unsplash::Photo.find("tAKXap853rY")
 photos1 = Unsplash::Photo.search("table setting")
 photos2 = Unsplash::Photo.search("tableware")
-photos3 = photos1 + photos2
+photos3 = Unsplash::Photo.search("table linen")
+photos4 = Unsplash::Photo.search("dinner setting")
+photos5 = Unsplash::Photo.search("table set")
+photos6 = Unsplash::Photo.search("dining table set")
+photos_all = photos1 + photos2 + photos3 + photos4 + photos5 + photos6
 photo_urls = []
-photos3.each {|photo| photo_urls << photo[:urls][:small]}
+photos_all.each {|photo| photo_urls << photo[:urls][:small]}
 
 counter = 0
 tablescapes = []
-20.times {
+45.times {
   tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Lorem.paragraph(sentence_count: 3), user: users[rand(0..(users.count - 1))], tag: Faker::Cosmere.shard, location: Faker::Address.city, image: photo_urls[counter])
+  tablescapes << tablescape
+  counter = (counter + 1)
+}
+
+5.times {
+  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Lorem.paragraph(sentence_count: 3), user: users[rand(0..(users.count - 1))], tag: "Birthday", location: Faker::Address.city, image: photo_urls[counter])
   tablescapes << tablescape
   counter = (counter + 1)
 }

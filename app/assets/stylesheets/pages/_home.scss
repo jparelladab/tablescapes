@@ -2,6 +2,7 @@
 .container-cards {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .outer-container-cards {
@@ -13,3 +14,5 @@
   background-color: rgba(173,167,178,0.8);
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
 }
+
+

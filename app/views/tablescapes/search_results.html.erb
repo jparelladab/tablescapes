@@ -1,7 +1,7 @@
 <h1 class="searchpage-heading"> Tablescape sets </h1>
 
   <div container>
-    <div row>
+    <div row class="search-row">
       <div col-12 col-md-6>
         <div class="searchcards">
           <% @tablescapes.each do |t| %>
@@ -13,7 +13,7 @@
               <% end %>
               <div class="searchcard-body">
               <div class="flex">
-               <h5 class="searchcard-title"><%= t.name %></h5>
+               <h5 class="searchcard-title"><%= t.name.capitalize %></h5>
                  <div class="search-price_tag">
                   <p>£<%= t.price_per_person %> pp</p>
                  </div>
