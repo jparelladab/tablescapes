@@ -15,6 +15,16 @@
       <% end %>
       <div class="price">£<%= @tablescape.price_per_person %></div>
     </div>
+    <div class="tablescape-reviews">
+      <h2>Reviews</h2>
+      <% if @reviews.any? %>
+        <% @reviews.each do |review| %>
+        <p><%= review.description %><p>
+        <% end %>
+      <% else %>
+        <p>Be the first to write a review. Write a review of this set after your occasion!</p>
+      <% end %>
+    </div>
   </div>
   <div class="reserve-form">
     <%= simple_form_for [@tablescape, @booking] do |f| %>
@@ -26,5 +36,4 @@
   </div>
 
 </div>
-
 

@@ -17,8 +17,9 @@
       <div class="login">
         <i class="fas fa-user"></i>
         <% if user_signed_in? %>
-          <span> Hello, <%= current_user.email %> </span>
+          <span> Hello <%= current_user.first_name %> </span>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+          <%= link_to "See your bookings", bookings_path %>
         <% else %>
           <%= link_to "Sign In", new_user_session_path %>
         <% end %>

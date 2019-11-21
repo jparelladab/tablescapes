@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_104947) do
+ActiveRecord::Schema.define(version: 2019_11_21_134839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2019_11_21_104947) do
     t.index ["tablescape_id"], name: "index_items_on_tablescape_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rating"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
+
   create_table "tablescapes", force: :cascade do |t|
     t.string "name"
     t.integer "price_per_person"
@@ -92,5 +101,6 @@ ActiveRecord::Schema.define(version: 2019_11_21_104947) do
   add_foreign_key "bookings", "tablescapes"
   add_foreign_key "bookings", "users"
   add_foreign_key "items", "tablescapes"
+  add_foreign_key "reviews", "bookings"
   add_foreign_key "tablescapes", "users"
 end
