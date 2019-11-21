@@ -17,7 +17,7 @@ photos5 = Unsplash::Photo.search("table set")
 photos6 = Unsplash::Photo.search("dining table set")
 photos_all = photos1 + photos2 + photos3 + photos4 + photos5 + photos6
 photo_urls = []
-photos_all.each {|photo| photo_urls << photo[:urls][:small]}
+photos_all.each {|photo| photo_urls << photo[:urls][:regular]}
 
 counter = 0
 tablescapes = []
