@@ -1,6 +1,7 @@
 class Tablescape < ApplicationRecord
   belongs_to :user
   has_many :items
+  has_many_attached :photos
   validates :name, presence: true
   validates :price_per_person, presence: true
   validates :description, presence: true
