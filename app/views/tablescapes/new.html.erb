@@ -7,7 +7,7 @@
   <%= f.input :description, :as => :text, input_html: { :style=> 'width: 400px;' } %>
   <%= f.input :price_per_person, :as => :integer, input_html: { :style=> 'width: 400px;' } %>
   <%= f.input :location, :as => :string, input_html: { :style=> 'width: 400px;' } %>
-  <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add my Tablescape", class: "btn btn-success" %>
 <% end %>
 

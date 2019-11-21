@@ -32,6 +32,7 @@ class TablescapesController < ApplicationController
 
   def create
     @tablescape = Tablescape.new(tablescape_params)
+    @tablescape.user_id = current_user.id
     if @tablescape.save
       redirect_to tablescape_path(@tablescape)
     else
@@ -55,7 +56,7 @@ class TablescapesController < ApplicationController
   private
 
   def tablescape_params
-    params.require(:tablescape).permit(:name, :price_per_person, :description, :tag, :location, photo: [])
+    params.require(:tablescape).permit(:name, :price_per_person, :description, :tag, :location, photos: [])
   end
 
   def set_tablescape

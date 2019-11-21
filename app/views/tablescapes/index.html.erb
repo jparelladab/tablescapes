@@ -1,6 +1,5 @@
 <h1 class="index-heading">All Tablescapes</h1>
-
-<%= link_to "Add Tablescape", new_tablescape_path, class: "btn btn-success"%>
+ <%= link_to "Add Tablescape", new_tablescape_path, class: "btn btn-success"%>
 
 <div container>
     <div row>
@@ -9,13 +8,13 @@
           <% @tablescapes.each do |tablescape| %>
             <div class="card">
               <% if tablescape.photos.attached? %>
-                <%= cl_image_tag photo.key, class: "card-img-top" %>
-                <% else %>
-                  <img class="card-img-top" src="<%= tablescape.image %>" alt="dinner set">
-                <% end %>
+                  <%= cl_image_tag tablescape.photos[1].key, class: "card-img-top"%>
+              <% else %>
+                <img class="card-img-top" src="<%= tablescape.image %>" alt="dinner set">
+              <% end %>
               <div class="card-body">
               <div class="flex">
-               <h5 class="card-title"><%= tablescape.name.capitalize %></h5>
+              <h5 class="card-title"><%= tablescape.name %></h5>
               <div class="price_tag">
                 <p>£<%= tablescape.price_per_person %> pp</p>
                  </div>
