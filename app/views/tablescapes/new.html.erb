@@ -8,7 +8,14 @@
   <%= f.input :location, :as => :string, placeholder: 'city name', input_html: { :style=> 'width: 400px;' } %>
   <%= f.input :items, as: :boolean, checked_value: true, unchecked_value: false %>
 
-  <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+
+<%= simple_form_for [@tablescape] do |f| %>
+  <%= f.input :name, :as => :string, input_html: { :style=> 'width: 400px;' }%>
+  <%= f.input :tag, :as => :string, input_html: { :style=> 'width: 400px;' }%>
+  <%= f.input :description, :as => :text, input_html: { :style=> 'width: 400px;' } %>
+  <%= f.input :price_per_person, :as => :integer, input_html: { :style=> 'width: 400px;' } %>
+  <%= f.input :location, :as => :string, input_html: { :style=> 'width: 400px;' } %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add my Tablescape", class: "btn btn-success" %>
   <% end %>
 </div>
