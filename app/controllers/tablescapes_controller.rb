@@ -27,14 +27,17 @@ class TablescapesController < ApplicationController
   end
 
   def new
-    @tablescape = Tablescape.new(params[:id])
+    @tablescape = Tablescape.new
   end
 
-#   def create
-#     @tablescape = Tablescape.new(tablescape_params)
-#     @tablescape.save
-#     redirect_to tablescape_path(@tablescape)
-#   end
+  def create
+    @tablescape = Tablescape.new(tablescape_params)
+    if @tablescape.save
+      redirect_to tablescape_path(@tablescape)
+    else
+      render :new
+    end
+  end
 
 #   def edit
 #   end
@@ -51,9 +54,9 @@ class TablescapesController < ApplicationController
 
   private
 
-#   def tablescape_params
-#     params.require(:tablescape).permit(:name, :price_per_person, :description, :user_id, :tag, :location)
-#   end
+  def tablescape_params
+    params.require(:tablescape).permit(:name, :price_per_person, :description, :tag, :location, photo: [])
+  end
 
   def set_tablescape
     @tablescape = Tablescape.find(params[:id])
