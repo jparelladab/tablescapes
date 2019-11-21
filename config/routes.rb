@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   # end
   resources :tablescapes, only: [:show] do
     resources :bookings, only: [:show, :create]
+    resources :reviews, only: [:show]
   end
 
+
+  resources :bookings, only: [:index] do
+    resources :reviews, only: [:show, :create, :update, :destroy]
+  end
   # resources :owned_tablescapes, only: [:new, :create, :show, :edit, :update, :destroy] do
   #   resources :items, except: [:show]
   # end
