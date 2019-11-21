@@ -18,11 +18,10 @@ class TablescapesController < ApplicationController
   end
 
   def search_results
-    @tablescapes = Tablescape.where(tag: params[:query])
-    if @tablescapes.count == 0
-      @tablescapes = Tablescape.all
+    if params[:query].present?
+      @tablescapes = Tablescape.search_by_tag(params[:query])
     else
-      @tablescapes = Tablescape.where(tag: params[:query])
+      @tablescapes = Tablescape.geocoded
     end
   end
 

@@ -10,4 +10,10 @@ class Tablescape < ApplicationRecord
   validates :image, presence: true
   geocoded_by :location
   after_validation :geocode
+  include PgSearch::Model
+  pg_search_scope :search_by_tag,
+    against: [:tag],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
