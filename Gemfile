@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
-
+gem 'cloudinary', '~> 1.12.0'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'geocoder'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
 gem 'devise'

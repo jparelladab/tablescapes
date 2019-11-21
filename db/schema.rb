@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_131345) do
+ActiveRecord::Schema.define(version: 2019_11_20_213628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2019_11_20_131345) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image", default: "https://images.unsplash.com/photo-1550826679-1b8ba79f1c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_tablescapes_on_user_id"
   end
 
