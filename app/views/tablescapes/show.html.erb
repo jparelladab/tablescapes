@@ -1,7 +1,10 @@
 <div class="container">
   <div class="product">
-    <!-- <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt=""> -->
-    <%= image_tag @tablescape.image, class: "main-image" %>
+    <% if @tablescape.photos.attached? %>
+      <%= cl_image_tag photo.key, class: "card-img-top" %>
+    <% else %>
+      <img src="https://d28m5bx785ox17.cloudfront.net/v1/img/uSL6tH9bMD9kUaI9P9XsdtpG6H1F2fyMaTEtKa2TzQ0=/d/l" class="main-image" alt="">
+    <% end %>
     <div class="tablescape-description">
       <h2><%=  @tablescape.name%></h2>
       <h3><%= @tablescape.tag %></h3>

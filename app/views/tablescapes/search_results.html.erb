@@ -5,9 +5,12 @@
       <div col-12 col-md-6>
         <div class="searchcards">
           <% @tablescapes.each do |t| %>
-           <% t.tag %>
             <div class="searchcard">
-              <img class="searchcard-img-top" src="<%= t.image %>" alt="dinner set">
+              <% if t.photos.attached? %>
+                <%= cl_image_tag photo.key, class: "card-img-top" %>
+              <% else %>
+                <img class="searchcard-img-top" src="<%= t.image %>" alt="dinner set">
+              <% end %>
               <div class="searchcard-body">
               <div class="flex">
                <h5 class="searchcard-title"><%= t.name.capitalize %></h5>
