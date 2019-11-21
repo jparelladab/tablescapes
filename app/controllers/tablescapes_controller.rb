@@ -3,6 +3,7 @@ class TablescapesController < ApplicationController
 
   def index
     @tablescapes = Tablescape.geocoded
+    @tablescapes = Tablescape.where.not(latitude: nil, longitude: nil)
 
     @markers = @tablescapes.map do |tablescape|
       {
