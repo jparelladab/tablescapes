@@ -21,10 +21,16 @@
               <div class="searchcard-text">
                 <p><%= t.description %></p>
               </div>
-              <%= link_to "See details", tablescape_path(t), class: "btn btn-success btn-details"%>
+              <%= link_to "See details", tablescape_path(t), class: "btn btn-success btn-details-search"%>
               </div>
             </div>
           <% end %>
+          <div class="add_placeholder" style="width: 18rem;">
+            <!-- <a href="#" class="btn btn-success">Add new tablescape</a> -->
+            <%= link_to "+", new_tablescape_path, class: "btn-add-index"%>
+            <div class="add_new_text">
+            <p> Add new tablescape </p>
+          </div>
         </div>
       </div>
     </div>
