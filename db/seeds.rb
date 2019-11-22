@@ -1,4 +1,4 @@
-user1 = User.create email: "melissaharrington77@gmail.com", password: "Password77"
+user1 = User.create first_name: "Melissa", last_name: "Harrington", email: "melissaharrington77@gmail.com", password: "Password77"
 puts ""
 puts "EMAIL: 'melissaharrington77@gmail.com', PASSWORD: 'Password77'"
 puts ""
