@@ -5,14 +5,17 @@
   flex-wrap: wrap;
 }
 
-.outer-container-cards {
+.outer-container-cards h1 {
   text-align: center;
-  padding-bottom: 40px;
-  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 55px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+.outer-container-cards {
   background-color: rgba(173,167,178,0.8);
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
 }
-
-
