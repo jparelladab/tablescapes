@@ -19,13 +19,15 @@
   <% else %>
   <img class="popup-image" src="<%= tablescape.image %>" alt="dinner set">
 <% end %>
+
 <div class="card-body">
   <div class="flex">
-    <h5 class="card-title-popup"><%= tablescape.name %></h5>
-    <div class="price-tag-popup">
+    <h5 class="card-title"><%= tablescape.name %></h5>
+    <div class="price_tag">
       <p>£<%= tablescape.price_per_person %> pp</p>
     </div>
   </div>
-
-<p><%= link_to "See details", tablescape_path(tablescape), class: "btn btn-success" %></p>
-
+  <p class="category_tag"> <%= tablescape.tag %> </p>
+  <p class="card-text"><%= tablescape.description %></p>
+  <%= link_to "See details", tablescape_path(tablescape), class: "btn btn-success"%>
+</div>
