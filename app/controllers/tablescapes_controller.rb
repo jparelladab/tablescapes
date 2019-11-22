@@ -8,7 +8,9 @@ class TablescapesController < ApplicationController
     @markers = @tablescapes.map do |tablescape|
       {
         lat: tablescape.latitude,
-        lng: tablescape.longitude
+        lng: tablescape.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: tablescape }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end

@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 before_action :set_booking, only: [:show]
 
   def index
+    @review = Review.new
     @bookings = Booking.where(user: current_user)
   end
 

@@ -6,18 +6,43 @@
     <% @bookings.each do |booking| %>
       <div class="card-bookings-index">
         <div class="card-bookings-index-details">
-          <p><%= booking.tablescape.name %></p>
+          <h3><%= link_to booking.tablescape.name, tablescape_path(booking.tablescape.id) %></h3>
           <p>(<%= booking.date_from %> - <%= booking.date_to %>)</p>
           <p>£<%= booking.total_price %></p>
           <p><%= booking.attendees %> <i class="fas fa-user"></i></p>
         </div>
         <div class="card-bookings-index-buttons">
           <% if booking.reviews.any? %>
-          <p><%= booking.reviews.description %></p>
-          <p><%= booking.reviews.rating %></p>
+            <h5>Your review of "<%= booking.tablescape.name %>":</h5>
+            <p><em>"<%= booking.reviews[0].description %>"</em></p>
+            <p><strong>Rating:</strong> <%= booking.reviews[0].rating %> out of 5</p>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#reviewModalCenter">Edit Review</button>
+            <%= link_to 'Delete Review', booking_review_path(booking, booking.reviews[0]), method: 'delete', class: "btn btn-secondary" %>
           <% else %>
-          <p>You haven't left a review for this booking yet</p>
-          <%= link_to "Write Review" %>
+            <p id="no-review-text">You haven't left a review for this booking yet</p>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#reviewModalCenter">Write Review</button>
+          <div class="modal fade" id="reviewModalCenter" tabindex="-1" role="dialog" aria-labelledby="reviewModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="reviewModalCenterTitle">Write your review below:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for @review, url: booking_reviews_path(booking) do |f| %>
+                    <%= f.input :description, placeholder: "Write your review here" %>
+                    <%= f.input :rating, placeholder: "Provide a rating between 1 (worst) and 5 (best)" %>
+                    <%= f.submit "Write Review", class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <% end %>
         </div>
         <div class="card-bookings-index-img">
