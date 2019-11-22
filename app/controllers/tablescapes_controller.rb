@@ -10,7 +10,7 @@ class TablescapesController < ApplicationController
         lat: tablescape.latitude,
         lng: tablescape.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: tablescape }),
-        image_url: helpers.asset_url('selectset')
+        image_url: helpers.asset_url('selectset.jpg')
       }
     end
   end
