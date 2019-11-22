@@ -18,10 +18,11 @@ class TablescapesController < ApplicationController
     @booking = Booking.new
     @items = Item.where(tablescape: params[:id])
     @reviews = @tablescape.reviews
+
     if @tablescape.latitude.nil?
       @markers = [{
-        lat: "53.375371",
-        lng: "-1.4669922",
+        lat: 53.375371,
+        lng: -1.4669922,
         infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: @tablescape })
       }]
     else
@@ -31,6 +32,9 @@ class TablescapesController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: @tablescape })
     }]
     end
+
+    @user = current_user.id
+
   end
 
   def search_results
