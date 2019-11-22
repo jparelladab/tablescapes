@@ -3,14 +3,8 @@
 <div container>
     <div row>
       <div col-12 col-md-6>
-        <div class="cards">
-        <div class="add_placeholder" style="width: 18rem;">
-            <!-- <a href="#" class="btn btn-success">Add new tablescape</a> -->
-            <%= link_to "+", new_tablescape_path, class: "btn-add-index"%>
-            <div class="add_new_text">
-            <p> Add new tablescape </p>
-            </div>
-        </div>
+        <div class="cards" >
+
           <% @tablescapes.each do |tablescape| %>
             <div class="card">
               <% if tablescape.photos.attached? %>
@@ -47,14 +41,22 @@
                 <!--  <div class="card-location">
                 <p ><%= tablescape.location %></p>
                 </div> -->
-                <%= link_to "See details", tablescape_path(tablescape), class: "btn btn-success btn-details"%>
+                <%= link_to "See details", tablescape_path(tablescape), class: "btn btn-success btn-details-index"%>
               </div>
             </div>
           <% end %>
+          <div class="add_placeholder" style="width: 18rem;">
+            <!-- <a href="#" class="btn btn-success">Add new tablescape</a> -->
+            <%= link_to "+", new_tablescape_path, class: "btn-add-index"%>
+            <div class="add_new_text">
+            <p> Add new tablescape </p>
+          </div>
+        </div>
         </div>
       </div>
     </div>
   </div>
+<div class="logo"> <a href="#scrollup"><i class="cmn-t-pulse fas fa-chevron-up circle"></i></a></div>
 
 
 <div
@@ -62,4 +64,5 @@
   style="width: 100%;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>

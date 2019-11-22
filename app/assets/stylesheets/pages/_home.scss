@@ -12,10 +12,13 @@
   font-size: 55px;
   color: white;
   text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-  font-family: 'Averia Serif Libre', cursive;
+  font-family: Roboto;
 }
 
 .outer-container-cards {
-  background-color: rgba(173,167,178,0.8);
-  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
+  padding: 20px;
+  font-size: 14px;
+  color: #3D3D3E;
+  font-family: Roboto;
+  background-color: #DFDFDF;
 }

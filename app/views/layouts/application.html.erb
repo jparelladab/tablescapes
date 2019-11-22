@@ -13,24 +13,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <div class="navbar">
-      <div class="logo"> <a href="/"><img src="https://previews.123rf.com/images/aksenovayu/aksenovayu1510/aksenovayu151000041/47191025-wine-and-candles-on-the-table-and-chair-silhouette-silhouette-of-a-table-in-a-cafe-table-with-wine-a.jpg" alt="" style="width: 90px"></a></div>
-      <div class="login">
-        <i class="fas fa-user"></i>
-        <% if user_signed_in? %>
-          <span>  Hello, <%= current_user.first_name %> | </span>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-          <span> | </span>
-          <%= link_to "See your bookings", bookings_path %>
-        <% else %>
-          <%= link_to "Sign In", new_user_session_path %>
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'map' %>
   </body>
 </html>
