@@ -1,7 +1,26 @@
 .new_header {
-  margin: 50px;
+  margin: 20px;
+  text-align: center;
+  position: relative;
 }
 
 .new_form {
-  margin: 50px;
+  margin: 20px;
 }
+
+.container-form {
+  width: 35%;
+  height: 95%;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 30px;
+  position: absolute;
+  justify-content: center;
+  top: 30%;
+  bottom: 0;
+  left: 32%;
+  right: 0;
+  box-shadow: 2px 2px 10px #6c757d;
+  border-radius: 10px;
+}
+
+

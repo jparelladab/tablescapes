@@ -21,7 +21,7 @@
         </div>
     <% else %>
 
-      <img src="<%= tablescape.image %>" class="main-image" alt="">
+      <img src="<%= @tablescape.image %>" class="main-image" alt="">
     <% end %>
     <div class="tablescape-description">
       <h2><%=  @tablescape.name%></h2>
@@ -32,6 +32,7 @@
         <span><%= item.name %></span>
       <% end %>
       <div class="price">£<%= @tablescape.price_per_person %></div>
+      <%= link_to "Update your tablescape", edit_tablescape_path  %>
     </div>
     <div class="tablescape-reviews">
       <h2>Reviews</h2>
@@ -47,7 +48,6 @@
         <p>Be the first to write a review. Write a review of this set after your occasion!</p>
       <% end %>
     </div>
-    <%= link_to "Update your tablescape?", edit_tablescape_path  %>
   </div>
   <div class="reserve-form">
     <%= simple_form_for [@tablescape, @booking] do |f| %>
