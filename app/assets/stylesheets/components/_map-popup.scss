@@ -1,0 +1,28 @@
+.popup-image {
+  width: 90%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.popup-image-carousel {
+  width: 90%;
+  border-radius: 5px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-title-popup {
+  margin-left: 10%;
+  text-align: left;
+  font-size: 20 px;
+  margin-bottom: 8%;
+  vertical-align: middle;
+}
+
+  .price-tag-pop {
+    font-size: 14px;
+    text-align: right;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-bottom: 8%;
+  }
