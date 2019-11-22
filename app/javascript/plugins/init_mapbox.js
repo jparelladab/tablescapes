@@ -8,9 +8,6 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 2 });
 };
 
-
-
-
 const initMapbox = () => {
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -28,7 +25,6 @@ const initMapbox = () => {
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
     addMarkersToMap(map, markers);
   }
-
 };
 
 const addMarkersToMap = (map, markers) => {

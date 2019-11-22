@@ -20,6 +20,7 @@ class TablescapesController < ApplicationController
     @items = Item.where(tablescape: params[:id])
     @tablescape = Tablescape.find(params[:id])
     @reviews = @tablescape.reviews
+    @user = current_user.id
   end
 
   def search_results
