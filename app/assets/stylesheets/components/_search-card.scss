@@ -1,6 +1,8 @@
 .searchpage-heading {
   text-align: center;
   margin: 30px 0;
+  font-family: Roboto;
+  font-size: 40px;
 }
 
 .searchcards {
@@ -11,7 +13,6 @@
 
 }
 
-
 .searchcard {
   text-align: center;
   // margin-left: 20px;
@@ -20,14 +21,16 @@
   border-radius: 5px;
   box-shadow: 2px 2px 10px #6c757d;
   width: 280px;
-  height: 350px;
+  height: 420px;
   position: relative;
+  font-family: Roboto;
   }
 
   .searchcard-img-top {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    border-radius: 5px 5px 0 0;
   }
 
   .flex {
@@ -42,7 +45,7 @@
     text-align: left;
     font-size: 20px;
     margin-bottom: 15px;
-
+    font-family: Roboto;
   }
 
   .search-price_tag {
@@ -64,12 +67,12 @@
     max-height: 5%;
   }
 
-  .btn-details {
+  .btn-details-search {
     // margin-right: 100px;
-    // margin-bottom: 10px;
-    // font-size: 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
     width: 100px;
-    // padding: 10px;
+    padding: 10px;
     float: center;
     position: absolute;
     bottom: 16px;

@@ -68,9 +68,20 @@ puts "BOOKINGS CREATED:"
 pp Booking.all
 puts ""
 
+puts "GENERATING ITEMS.............."
+raw_items = File.readlines('db/resources/items.txt')
+items = []
+raw_items.each do |item|
+  items << item.gsub(/\n/, "")
+end
+puts ""
+puts "ITEMS:"
+pp items
+puts ""
+
 puts "SEEDING ITEMS.............."
 240.times {
-  Item.create name: Faker::Appliance.brand, description: Faker::Lorem.paragraph(sentence_count: 3), category: Faker::Appliance.equipment, tablescape: tablescapes[rand(0..(tablescapes.count - 1))]
+  Item.create name: items[rand(0..(items.count - 1))], description: Faker::Lorem.paragraph(sentence_count: 3), category: Faker::Appliance.equipment, tablescape: tablescapes[rand(0..(tablescapes.count - 1))]
 }
 puts ""
 puts "ITEMS CREATED:"

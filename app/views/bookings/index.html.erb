@@ -47,7 +47,7 @@
         </div>
         <div class="card-bookings-index-img">
           <% if booking.tablescape.photos.attached? %>
-            <%= cl_image_tag photo.key, class: "card-img" %>
+            <%= cl_image_tag booking.tablescape.photos[0].key, class: "card-img" %>
           <% else %>
             <img class="card-img" src="<%= booking.tablescape.image %>" alt="dinner set">
           <% end %>

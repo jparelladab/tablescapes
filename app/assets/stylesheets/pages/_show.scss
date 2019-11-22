@@ -1,4 +1,5 @@
 body {
+  font-family: Roboto;
 }
 .product {
   width: 70%;
@@ -21,7 +22,22 @@ body {
   width: 100%;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
+  h2 {
+    text-align: center;
+    font-family: 'Averia Serif Libre', cursive;
+  }
+  h3{
+    text-align: center;
+    opacity: 0.6;
+    font-size: 20px;
+    font-family: Roboto;
+  }
+  h4 {
+    font-family: Roboto;
+  }
+  p {
+    text-align: justify;
+  }
 }
 
 .container {
@@ -38,19 +54,6 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-.tablescape-description h2 {
-  text-align: center;
-}
-
-.tablescape-description h3{
-  text-align: center;
-  opacity: 0.6;
-  font-size: 20px;
-}
-
-.tablescape-description p {
-  text-align: justify;
-}
 
 
 .price {
@@ -60,27 +63,30 @@ body {
   margin-top: 10px;
 }
 
-.container-booking {
-margin: 20px 40px;
-}
+// .container-booking {
+// margin: 20px 40px;
+// }
 
-.product-booking {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  margin: 20px auto;
-  width: 100%;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
+// .product-booking {
+//   display: flex;
+//   justify-content: space-between;
+//   border: 1px solid black;
+//   margin: 20px auto;
+//   width: 100%;
+//   padding: 20px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+// }
 
 .tablescape-reviews {
   border: 1px solid black;
-  // margin: 20px;
   width: 100%;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  h2 {
+    font-family: Roboto;
+    padding-bottom: 10px;
+  }
 }
 
 .confirmation-icon {

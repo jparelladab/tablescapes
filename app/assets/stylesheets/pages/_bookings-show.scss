@@ -1,0 +1,55 @@
+.container-booking {
+  margin: 20px 40px;
+}
+.product-booking {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 20px auto;
+  width: 70%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  h2 {
+    font-family: Roboto;
+  }
+}
+.confirmation-icon {
+  font-size: 160px;
+  margin-right: 65px;
+}
+
+.tablescape-description-booking {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 70%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  h2 {
+    text-align: center;
+    font-family: 'Averia Serif Libre', cursive;
+  }
+  h3{
+    text-align: center;
+    opacity: 0.6;
+    font-size: 20px;
+    font-family: Roboto;
+  }
+  h4 {
+    font-family: Roboto;
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+.main-image-booking {
+  width: 70%;
+  height: 400px;
+  object-fit: cover;
+  margin: 20px auto;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
