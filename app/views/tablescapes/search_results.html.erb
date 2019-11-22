@@ -1,5 +1,13 @@
 <h1 class="searchpage-heading"> Tablescape sets </h1>
 
+<ul id="tabs">
+    <li><a href="#" name="tab1">Results</a></li>
+    <li><a href="#" name="tab2">Map</a></li>
+</ul>
+<!-- Content wrapper for tabs.-->
+<div id="content">
+  <div id="tab1">
+
   <div container>
     <div row class="search-row">
       <div col-12 col-md-6>
@@ -53,6 +61,17 @@
     </div>
   </div>
 
+  <div id="tab2">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+<!-- Content wrapper for tabs.-->
+  </div>
+</div>
 
 
    <!--      <img class="card-img-top" src="https://designthusiasm.com/wp-content/uploads/2016/11/Elegant-Christmas-Table-Setting-12.jpg" alt="dinner set">
