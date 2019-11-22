@@ -59,9 +59,20 @@
                   <div class="add_new_text">
                   <p> Add new tablescape </p>
                 </div>
-              </div>
+                <p class="category_tag"> <%= tablescape.tag %> </p>
+                <p class="card-text"><%= tablescape.description %></p>
+                <!--  <div class="card-location">
+                <p ><%= tablescape.location %></p>
+                </div> -->
+                <%= link_to "See details", tablescape_path(tablescape), class: "btn btn-secondary btn-details-index"%>
               </div>
             </div>
+          <% end %>
+          <div class="add_placeholder" style="width: 18rem;">
+            <!-- <a href="#" class="btn btn-secondary">Add new tablescape</a> -->
+            <%= link_to "+", new_tablescape_path, class: "btn-add-index"%>
+            <div class="add_new_text">
+            <p> Add new tablescape </p>
           </div>
         </div>
       <div class="logo"> <a href="#scrollup"><i class="cmn-t-pulse fas fa-chevron-up circle"></i></a></div>

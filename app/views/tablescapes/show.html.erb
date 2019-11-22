@@ -32,6 +32,9 @@
         <span><%= item.name %></span>
       <% end %>
       <div class="price">£<%= @tablescape.price_per_person %></div>
+      <% if @user == @tablescape.user.id %>
+        <%= link_to "Update your tablescape", edit_tablescape_path  %>
+      <% end %>
     </div>
     <div class="tablescape-reviews">
       <h2>Reviews</h2>
@@ -47,9 +50,6 @@
         <p>Be the first to write a review. Write a review of this set after your occasion!</p>
       <% end %>
     </div>
-    <% if @user == @tablescape.user.id %>
-      <%= link_to "Update your tablescape?", edit_tablescape_path %>
-    <% end %>
   </div>
   <div class="reserve-form">
     <%= simple_form_for [@tablescape, @booking] do |f| %>
