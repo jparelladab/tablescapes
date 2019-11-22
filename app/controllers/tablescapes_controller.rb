@@ -10,7 +10,6 @@ class TablescapesController < ApplicationController
         lat: tablescape.latitude,
         lng: tablescape.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: tablescape }),
-        image_url: helpers.asset_url('selectset')
       }
     end
   end
@@ -18,8 +17,20 @@ class TablescapesController < ApplicationController
   def show
     @booking = Booking.new
     @items = Item.where(tablescape: params[:id])
-    @tablescape = Tablescape.find(params[:id])
     @reviews = @tablescape.reviews
+    if @tablescape.latitude.nil?
+      @markers = [{
+        lat: "53.375371",
+        lng: "-1.4669922",
+        infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: @tablescape })
+      }]
+    else
+      @markers = [{
+        lat: @tablescape.latitude,
+        lng: @tablescape.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { tablescape: @tablescape })
+    }]
+    end
   end
 
   def search_results

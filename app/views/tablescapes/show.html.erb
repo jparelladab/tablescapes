@@ -1,4 +1,6 @@
-<div class="container">
+
+
+<div class="container container-flex align-items-start pb-4">
   <div class="product">
     <% if @tablescape.photos.attached? %>
 
@@ -48,14 +50,23 @@
       <% end %>
     </div>
     <%= link_to "Update your tablescape?", edit_tablescape_path  %>
+    <div class="map-show box-class"><%= render 'shared/map' %></div>
   </div>
-  <div class="reserve-form">
-    <%= simple_form_for [@tablescape, @booking] do |f| %>
-      <%= f.input :date_from%>
-      <%= f.input :date_to%>
-      <%= f.input :attendees %>
-      <%= f.submit "Reserve", class: "btn btn-primary" %>
-    <% end %>
+  <div class="sticky-top">
+    <div class="reserve-form">
+      <%= simple_form_for [@tablescape, @booking] do |f| %>
+        <%= f.input :date_from%>
+        <%= f.input :date_to%>
+        <%= f.input :attendees %>
+        <%= f.submit "Reserve", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
   </div>
+
+
 </div>
+
+
+
 
