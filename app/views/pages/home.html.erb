@@ -6,7 +6,7 @@
     <br>
     <br>
     <div id="form-home" class="col-5">
-    <h4>Search by category or search all:</h4>
+    <h4>Search by category or see all:</h4>
     <%= form_tag(search_results_path, method: :get) do %>
     <%= text_field_tag :query,
         params[:query],
@@ -15,7 +15,7 @@
       <br>
       <div class="form-buttons d-flex flex-row">
         <%= submit_tag 'Search Categories', class: "btn btn-dark" %>
-        <%= link_to "Search All", tablescapes_path, class: "btn btn-dark" %>
+        <%= link_to "Show All Tablescapes", tablescapes_path, class: "btn btn-dark" %>
       </div>
     <% end %>
     </div>
