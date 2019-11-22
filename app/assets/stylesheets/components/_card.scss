@@ -1,6 +1,8 @@
 .index-heading {
   text-align: center;
   margin: 20px 0;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 40px;
 }
 
 .btn-add-index {
@@ -22,6 +24,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 45px;
   margin-left: 50px;
+  font-family: 'Noto Serif KR', serif;
 }
 
 
@@ -78,7 +81,7 @@
     text-align: left;
     font-size: 20px;
     margin-bottom: 15px;
-
+    font-family: 'Noto Serif KR', serif;
   }
 
   .price_tag {
@@ -115,6 +118,7 @@
     position: absolute;
     bottom: 16px;
     left: 90px;
+    font-family: Roboto;
   }
 
 .btn-homelink {

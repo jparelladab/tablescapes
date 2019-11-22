@@ -5,23 +5,21 @@
   </div>
     <br>
     <br>
-    <div id="form-home" class="col-5 offset-1">
-    <h4>Search by category:</h4>
+    <div id="form-home" class="col-5">
+    <h4>Search by category or search all:</h4>
     <%= form_tag(search_results_path, method: :get) do %>
     <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Select category" %>
       <br>
-      <div class="form-buttons d-flex flex-column">
+      <div class="form-buttons d-flex flex-row">
         <%= submit_tag 'Search Categories', class: "btn btn-dark" %>
-        <h3> or </h3>
         <%= link_to "Search All", tablescapes_path, class: "btn btn-dark" %>
       </div>
     <% end %>
     </div>
     <div class="logo"> <a href=""></a></div>
-
 </div>
 
 
@@ -36,26 +34,23 @@
   <div class="container-cards">
     <div class="home-card">
       <%=image_tag("searching.jpg")%>
-      <!-- <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" alt="Looking at computer"/> -->
       <h2>Search tablescapes</h2>
       <p>Search for a tablescape by category or browse all.</p>
     </div>
     <div class="home-card">
       <%=image_tag("selectset.jpg")%>
-      <!-- <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="Pointing at a screen"/> -->
       <h2>Choose a tablescape</h2>
       <p>Select a tablescape that is perfect for your occasion.</p>
     </div>
     <div class="home-card">
       <%=image_tag("ladybooking.jpg")%>
-      <!-- <img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1179&q=80" alt="Happy man"/> -->
       <h2>Book and pay</h2>
       <p>Check availability, reserve, pay and enjoy!</p>
     </div>
     <div class="home-card">
       <%=image_tag("boxcollection.jpg")%>
-      <h2>Collect your tablescape</h2>
-      <p>Collect your tablescape for your special event!</p>
+      <h2>Collect or receive your tablescape</h2>
+      <p>Collect/receive your tablescape for your special event!</p>
     </div>
   </div>
 </div>
