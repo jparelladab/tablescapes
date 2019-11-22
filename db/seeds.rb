@@ -41,16 +41,22 @@ puts "PHOTO URLS:"
 pp photo_urls
 puts ""
 
+puts "GENERATING TAGS.............."
+raw_tags = File.readlines('db/resources/tags.txt')
+tags = []
+raw_tags.each do |tag|
+  tags << tag.gsub(/\n/, "")
+end
+puts ""
+puts "TAGS:"
+pp tags
+puts ""
+
 puts "SEEDING TABLESCAPES.............."
 counter = 0
 tablescapes = []
-45.times {
-  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Lorem.paragraph(sentence_count: 3), user: users[rand(0..(users.count - 1))], tag: Faker::Cosmere.shard, location: addresses[rand(0..(addresses.count - 1))], image: photo_urls[counter])
-  tablescapes << tablescape
-  counter = (counter + 1)
-}
-5.times {
-  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Lorem.paragraph(sentence_count: 3), user: users[rand(0..(users.count - 1))], tag: "Birthday", location: addresses[rand(0..(addresses.count - 1))], image: photo_urls[counter])
+50.times {
+  tablescape = Tablescape.create(name: (Faker::Color.color_name.capitalize + " " + Faker::Commerce.material.capitalize), price_per_person: rand(25..250), description: Faker::Lorem.paragraph(sentence_count: 3), user: users[rand(0..(users.count - 1))], tag: tags[rand(0..(tags.count - 1))], location: addresses[rand(0..(addresses.count - 1))], image: photo_urls[counter])
   tablescapes << tablescape
   counter = (counter + 1)
 }
