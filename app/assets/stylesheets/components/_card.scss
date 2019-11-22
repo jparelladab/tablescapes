@@ -6,7 +6,7 @@
 .btn-add-index {
   font-size: 80px;
   position: absolute;
-  left: 42%;
+  left: 40%;
   top: 30%;
   color: gray;
 }
@@ -63,6 +63,7 @@
     width: 100%;
     height: 180px;
     object-fit: cover;
+    border-radius: 5px 5px 0 0;
   }
 
   .flex {
@@ -105,17 +106,15 @@
     max-height: 5%;
   }
 
-  .btn-details {
-    // margin-right: 100px;
-    // margin-bottom: 10px;
+  .btn-details-index {
+      margin-bottom: 10px;
     font-size: 14px;
     width: 100px;
-    // padding: 10px;
+    padding: 10px;
     float: center;
     position: absolute;
     bottom: 16px;
     left: 90px;
-
   }
 
 .btn-homelink {
@@ -161,6 +160,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
+
 
 
 
